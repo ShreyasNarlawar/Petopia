@@ -12,32 +12,30 @@ import FAQ from './Component/FAQ/FAQ'; // FAQ component
 import Terms from './Component/Terms/Terms'; // Terms of Service component
 import Footer from './Component/Footer/Footer'; // Footer component
 import NotFound from './Component/NotFound/NotFound'; // 404 Not Found component
-import Stats from './Component/Stats/Stats'; 
+// import Stats from './Component/Stats/Stats'; 
 import './App.css'; 
 
 const App = () => {
   return (
     <Router> 
       <div className="app-container"> 
-        <NavBar /> 
-        <main> {/* Wrap the Routes within a <main> tag */}
+        {/* <NavBar />  */}
           <Routes>
-            <Route path="/" element={<Home />} /> 
-            <Route path="/adopt" element={<Adopt />} />
-            <Route path="/donate" element={<Donate />} />
-            <Route path="/aboutUs" element={<AboutUs />} /> 
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="*" element={<NotFound />} /> 
+            <Route path="/" exact element={<Home />} /> 
+            <Route path="/adopt" exact element={<Adopt />} />
+            <Route path="/donate" exact element={<Donate />} />
+            <Route path="/aboutUs" exact element={<AboutUs />} /> 
+            <Route path="/blog" exact element={<Blog />} />
+            <Route path="/login" exact element={<Login />} />
+            <Route path="/register" exact element={<Register />} />
+            <Route path="/faq" exact element={<FAQ />} />
+            <Route path="/terms" exact element={<Terms />} />
+            <Route path="*" exact element={<NotFound />} /> 
           </Routes>
-        </main>
-       
       </div>
+      <Footer/>
     </Router>
-  );
-};
+  )
+}
 
 export default App;

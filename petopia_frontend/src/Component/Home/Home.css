@@ -1,101 +1,317 @@
-/* Responsive Navbar */
-.navbar {
-    background-color: #f8f9fa;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
+/* Home.css */
+
+/* Base styles */
+video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+.hero-container {
+  background: url("../../assets/cover.jpg") center center / cover no-repeat;
+  height: 100vh;
+  width: 100%;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  object-fit: contain;
+  animation: fadeIn 1s ease-in; /* Fade-in effect */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .navbar.scrolled {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  to {
+    opacity: 1;
   }
-  
-  .navbar-brand h2 {
-    font-size: 24px;
-    color: #007bff;
+}
+
+.hero-container > h1 {
+  color: white;
+  font-size: 100px;
+  margin-top: 100px;
+  transition: transform 0.3s ease; /* Smooth scaling */
+}
+
+.hero-container > h1:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+.hero-container > p {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 32px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hero-btns {
+  margin-top: 32px;
+}
+
+.hero-btns .btn {
+  margin: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-btns .btn:hover {
+  transform: scale(1.1); /* Scale effect on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.fa-play-circle {
+  margin-left: 4px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 960px) {
+  .hero-container > h1 {
+      font-size: 70px;
+      margin-top: -50px;
   }
-  
-  .navbar-links a {
-    margin: 0 10px;
-    color: #333;
-    font-size: 16px;
-    transition: color 0.3s ease;
+
+  .hero-container > p {
+      font-size: 28px;
   }
-  
-  .navbar-links a:hover {
-    color: #007bff;
+
+  .hero-btns .btn {
+      font-size: 14px;
+      padding: 8px 16px;
   }
-  
-  /* Hero Section */
-  .hero {
-    text-align: center;
-    background: linear-gradient(to right, #007bff, #0056b3);
-    color: white;
-    padding: 50px 20px;
-    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container > h1 {
+      font-size: 50px;
+      margin-top: -30px;
   }
-  
-  .hero h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+
+  .hero-container > p {
+      font-size: 24px;
   }
-  
-  .hero p {
-    font-size: 18px;
+
+  .hero-btns {
+      flex-direction: column;
+      align-items: center;
   }
-  
-  .search-bar {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+
+  .hero-btns .btn {
+      width: 80%;
+      margin: 10px 0;
   }
-  
-  .search-bar input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+}
+
+@media screen and (max-width: 480px) {
+  .hero-container > h1 {
+      font-size: 36px;
+      margin-top: -20px;
   }
-  
-  .search-bar button {
-    background-color: #0056b3;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+
+  .hero-container > p {
+      font-size: 20px;
   }
-  
-  /* Categories */
-  .categories {
-    text-align: center;
-    padding: 40px 20px;
+
+  .hero-btns .btn {
+      font-size: 12px;
+      padding: 6px 12px;
   }
-  
-  .category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 20px;
+}
+
+:root {
+  --primary: #fff;
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: 2px;
+  outline: none;
+  border: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.btn--primary {
+  background-color: var(--primary);
+  color: #282823;
+  border: 1px solid var(--primary);
+}
+
+.btn--outline {
+  background-color: #fff;
+  color: #282823;
+  padding: 8px 20px;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease-out;
+ }
+
+.btn--outline:hover {
+  background-color: #282823; /* Dark background on hover */
+  color: #fff; /* White text on hover */
+}
+
+.btn--medium {
+  padding: 8px 20px;
+  font-size: 20px;
+}
+
+.btn--large {
+  padding: 12px 26px;
+  font-size: 20px;
+}
+
+.btn--medium:hover,
+.btn--large:hover {
+  background: #fff;
+  color: #282823;
+  transform: scale(1.05); /* Scale effect on hover */
+  transition: all 0.3s ease-out;
+}
+
+.cards {
+  padding: 4rem;
+  background: #fff;
+}
+
+.cards h1 {
+  text-align: center;
+  color: #333;
+}
+
+.cards p {
+  text-align: center;
+  color: #333;
+  font-size: larger;
+  font-weight: lighter;
+}
+
+.cards__container {
+  display: block;
+  flex-flow: column;
+  align-items: center;
+  max-width: 1120px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.cards__wrapper {
+  position: relative;
+  margin: 50px 0 45px;
+}
+
+.cards__items {
+  margin-bottom: 24px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards__item {
+  display: flex;
+  flex: 1;
+  margin: 0 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease; /* Added box-shadow transition */
+}
+
+.cards__item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(56, 125, 255, 0.3); /* Shadow effect on hover */
+}
+
+.cards__item__link {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  transition: all 0.3s ease-in-out;
+}
+
+.cards__item__link:hover {
+  box-shadow: 0 12px 30px rgba(56, 125, 255, 0.3);
+}
+
+.cards__item__pic-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 67%;
+  overflow: hidden;
+  background-color: #f4f4f4;
+}
+
+.cards__item__pic-wrap::after {
+  content: attr(data-category);
+  position: absolute;
+  bottom: 0;
+  margin-left: 10px;
+  padding: 6px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #1f98f4;
+  border-radius: 3px;
+}
+
+.cards__item__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cards__item__img:hover {
+  transform: scale(1.1);
+}
+
+.cards__item__info {
+  padding: 20px 30px;
+  background: #fff;
+}
+
+.cards__item__text {
+  color: #252e48;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media only screen and (min-width: 1024px) {
+  .cards__items {
+      display: flex;
   }
-  
-  .category {
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+  .cards__item {
+      margin-bottom: 2rem;
   }
-  
-  /* Featured Animals */
-  .featured-animals .animal-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .cards__item {
+      flex: 1 1 100%;
   }
-  
+}

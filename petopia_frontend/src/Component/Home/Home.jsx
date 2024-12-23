@@ -1,121 +1,130 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import './Home.css';
+import './Home.css'; // Import your CSS file for styling
 
-const Home = () => {
-  // const [isScrolled, setIsScrolled] = useState(false);
+// Button Component
+const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
+const SIZES = ['btn--medium', 'btn--large'];
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setIsScrolled(window.scrollY > 100);
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
-
-  // const petData = [
-  //   { name: 'Buddy', breed: 'Golden Retriever', description: 'Friendly and loyal companion.' },
-  //   { name: 'Max', breed: 'Beagle', description: 'Curious and playful, loves to explore.' },
-  //   { name: 'Bella', breed: 'Bulldog', description: 'Gentle and affectionate, great with kids.' },
-  //   // ... Other pet data
-  // ];
+const Button = ({
+  children,
+  type,
+  onClick,
+  buttonStyle,
+  buttonSize,
+}) => {
+  const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0];
+  const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
   return (
-    <div>
+    <Link to='/Login' className='btn-mobile'>
+      <button
+        className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+        onClick={onClick}
+        type={type}
+      >
+        {children}
+      </button>
+    </Link>
+  )
+}
 
-    <h1>From Homepage</h1>
-    {/* <Stats /> */}
+// CardItem Component
+function CardItem(props) {
+  return (
+    <li className="cards__item">
+      <Link className="cards__item__link" to={props.path}>
+        <figure className="cards__item__pic-wrap" data-category={props.label}>
+          <img src={props.src} alt="Pet" className="cards__item__img" />
+        </figure>
+        <div className="cards__item__info">
+          <h5 className="cards__item__text">{props.text}</h5>
+        </div>
+      </Link>
+    </li>
+  )
+}
+
+// HeroSection Component
+function HeroSection() {
+  return (
+    <div className='hero-container'>
+      <h1>ADOPT NOW!</h1>
+      <p>Every pet deserves a purfect home</p>
+      <div className="hero-btns">
+        <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>
+          Adopt Now
+        </Button>
+      </div>
     </div>
-    // <div className="home">
+  )
+}
 
-    //     <h1>Find Your Furry Best Friend.</h1>
-    //     <p>Give a loving home to a deserving pet.</p>
-    //     <motion.div
-    //       className="search-bar"
-    //       initial={{ y: 50, opacity: 0 }}
-    //       animate={{ y: 0, opacity: 1 }}
-    //       transition={{ delay: 0.5, duration: 0.8 }}
-    //     >
-    //       <input type="text" placeholder="Search by breed, location, etc." />
-    //       <button>Search</button>
-    //     </motion.div>
+// Cards Component
+function Cards() {
+  return (
+    <div className="cards">
+      <h1>Find a loving home for your pet</h1>
+      <h1>Why Pet Adoption?</h1>
+      <p>
+        Pet adoption offers a win-win solution for both humans and animals. By choosing adoption, you save a life and combat unethical breeding practices, such as puppy mills. Additionally, adopting a pet is financially savvy, as fees often cover essential services like vaccinations and spaying/neutering.
+      </p>
+      <div className="cards__container">
+        <div className="cards__wrapper">
+          <ul className="cards__items">
+            <CardItem 
+              src="../../assets/bunny.jpg" 
+              text="Adorable bunnies" 
+              label="Bunny" 
+              path="/adoption" 
+            />
+            <CardItem 
+              src="../../assets/cat.jpg" 
+              text="Adorable kittens" 
+              label="Kittens" 
+              path="/adoption" 
+            />
+            <CardItem 
+              src="../../assets/dog.jpg" 
+              text="Adorable pups" 
+              label="Puppies" 
+              path="/adoption" 
+            />
+          </ul>
+          <ul className="cards__items">
+            <CardItem 
+              src="../../assets/fish.jpg" 
+              text="Adorable fishes" 
+              label="Fish" 
+              path="/adoption" 
+            />
+            <CardItem 
+              src="../../assets/duck.jpg" 
+              text="Adorable birds" 
+              label="Birds" 
+              path="/adoption" 
+            />
+            <CardItem 
+              src="../../assets/cow.jpg" 
+              text="Adorable cattle" 
+              label="Cattle" 
+              path="/adoption" 
+            />
+          </ul>
+        </div>
+      </div>
+    </div>
+  )
+}
 
-    //   <div className="categories">
-    //     <h2>Browse by Category</h2>
-    //     <motion.div
-    //       className="category-grid"
-    //       initial="hidden"
-    //       animate="visible"
-    //       variants={{
-    //         hidden: { opacity: 0, y: 50 },
-    //         visible: {
-    //           opacity: 1,
-    //           y: 0,
-    //           transition: {
-    //             staggerChildren: 0.2,
-    //           },
-    //         },
-    //       }}
-    //     >
-    //       {['Dogs', 'Cats', 'Rabbits', 'Birds'].map((category, index) => (
-    //         <motion.div
-    //           className="category"
-    //           key={index}
-    //           whileHover={{ scale: 1.1 }}
-    //           whileTap={{ scale: 0.9 }}
-    //         >
-    //           {category}
-    //         </motion.div>
-    //       ))}
-    //     </motion.div>
-    //   </div>
+// Home Component
+const Home = () => {
+  return (
+    <div>
+      <HeroSection />
+      <Cards />
+    </div>
+  )
+}
 
-    //   <div className="featured-animals">
-    //     <h2>Featured Pets</h2>
-    //     <motion.div
-    //       className="animal-grid"
-    //       initial="hidden"
-    //       animate="visible"
-    //       variants={{
-    //         hidden: { opacity: 0 },
-    //         visible: {
-    //           opacity: 1,
-    //           transition: {
-    //             staggerChildren: 0.2,
-    //           },
-    //         },
-    //       }}
-    //     >
-    //       {petData.map((pet, index) => (
-    //         <motion.div
-    //           className="animal-card"
-    //           key={index}
-    //           whileHover={{ scale: 1.05 }}
-    //           initial={{ opacity: 0, y: 50 }}
-    //           animate={{ opacity: 1, y: 0 }}
-    //           transition={{ duration: 0.5, delay: index * 0.2 }}
-    //         >
-    //           <div className="animal-image">
-    //             <svg width="100" height="100" viewBox="0 0 100 100">
-    //               <circle cx="50" cy="50" r="40" fill="#FFD700" />
-    //               <text x="50" y="55" fontSize="12" textAnchor="middle" fill="#000">
-    //                 {pet.breed}
-    //               </text>
-    //             </svg>
-    //           </div>
-    //           <h3>{pet.name}</h3>
-    //           <p>{pet.description}</p>
-    //         </motion.div>
-    //       ))}
-    //     </motion.div>
-    //   </div>
-  //   </div>
-  );
-};
-
-export default Home;
+export default Home
