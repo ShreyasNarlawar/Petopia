@@ -1,6 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css'; // Import your CSS file for styling
+import Bunny from '../../assets/bunny.jpg';
+import Cat from '../../assets/cat.jpg';
+// import Cow from '../../assets/cow.jpg';
+import Dog from '../../assets/dog.jpg';
+import Duck from '../../assets/duck.jpg';
+import Fish from '../../assets/fish.jpg';
+import Kitten from '../../assets/kitten.jpg';
+
 
 // Button Component
 const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
@@ -73,19 +81,19 @@ function Cards() {
         <div className="cards__wrapper">
           <ul className="cards__items">
             <CardItem 
-              src="../../assets/bunny.jpg" 
+              src={Bunny}
               text="Adorable bunnies" 
               label="Bunny" 
               path="/adoption" 
             />
             <CardItem 
-              src="../../assets/cat.jpg" 
+              src={Kitten} 
               text="Adorable kittens" 
               label="Kittens" 
               path="/adoption" 
             />
             <CardItem 
-              src="../../assets/dog.jpg" 
+              src={Dog} 
               text="Adorable pups" 
               label="Puppies" 
               path="/adoption" 
@@ -93,19 +101,25 @@ function Cards() {
           </ul>
           <ul className="cards__items">
             <CardItem 
-              src="../../assets/fish.jpg" 
+              src={Fish}
               text="Adorable fishes" 
               label="Fish" 
               path="/adoption" 
             />
             <CardItem 
-              src="../../assets/duck.jpg" 
+              src={Duck}
               text="Adorable birds" 
               label="Birds" 
               path="/adoption" 
             />
+            {/* <CardItem 
+              src={Cow}
+              text="Adorable cows" 
+              label="Cow" 
+              path="/adoption" 
+            /> */}
             <CardItem 
-              src="../../assets/cow.jpg" 
+              src={Cat}
               text="Adorable cattle" 
               label="Cattle" 
               path="/adoption" 

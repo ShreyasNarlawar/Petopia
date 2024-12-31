@@ -1,30 +1,47 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useHistory for navigation
+import { useNavigate } from 'react-router-dom'; // Correct useNavigate import
 import './Login.css'; // Importing CSS for styling
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const Navigate = useNavigate(); // Initialize useHistory
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation
+    return regex.test(email);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle login logic here
-    if (email && password) {
-      console.log('Email:', email);
-      console.log('Password:', password);
-      // Simulate successful login and redirect
-      history.push('/'); // Redirect to home or dashboard after login
-    } else {
+
+    if (!email || !password) {
       setError('Please fill in all fields.');
+      return;
     }
+
+    if (!validateEmail(email)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+
+    // Simulate successful login and redirect
+    console.log('Email:', email);
+    console.log('Password:', password);
+
+    setError(''); // Clear errors
+    navigate('/'); // Redirect to home or dashboard after login
   };
 
   return (
     <div className="login-container">
       <h2 className="login-title">Welcome Back!</h2>
-      {error && <p className="error-message">{error}</p>} {/* Display error message */}
+      {error && (
+        <p className="error-message" aria-live="polite">
+          {error}
+        </p>
+      )} {/* Display error message */}
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="email">Email</label>
@@ -32,9 +49,12 @@ const Login = () => {
             type="email"
             id="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setError(''); // Clear error on input
+            }}
             required
-            placeholder="Enter your email"
+            placeholder="you@example.com"
           />
         </div>
         <div className="form-group">
@@ -43,7 +63,10 @@ const Login = () => {
             type="password"
             id="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setError(''); // Clear error on input
+            }}
             required
             placeholder="Enter your password"
           />

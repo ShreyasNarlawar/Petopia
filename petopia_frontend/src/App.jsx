@@ -19,7 +19,7 @@ const App = () => {
   return (
     <Router> 
       <div className="app-container"> 
-        {/* <NavBar />  */}
+        <NavBar /> 
           <Routes>
             <Route path="/" exact element={<Home />} /> 
             <Route path="/adopt" exact element={<Adopt />} />
@@ -33,7 +33,7 @@ const App = () => {
             <Route path="*" exact element={<NotFound />} /> 
           </Routes>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </Router>
   )
 }

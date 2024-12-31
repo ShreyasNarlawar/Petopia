@@ -1,0 +1,54 @@
+/* Fullscreen Wrapper */
+.fullscreen-wrapper {
+    height: 100vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa, #d7e1ec);
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Full-Screen Form Styling */
+  .form-wrapper {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 0; /* Remove rounded corners */
+    background: #fff;
+    box-shadow: none; /* Remove shadow */
+    overflow: auto;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Input and Button Styling */
+  input, select, button {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-wrapper {
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  

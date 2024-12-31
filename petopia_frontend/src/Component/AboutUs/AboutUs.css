@@ -1,7 +1,18 @@
 /* AboutUs.css */
 
+/* Parent container styles */
+.parent-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100vh;
+  height: 100vh; /* Full viewport height */
+  background-color: #eaeaea; /* Optional: Background color for the parent */
+}
+
 .about-us-container {
-  margin: 20px;
+  margin: 150px;
+  width: 100vh;
   padding: 20px;
   background-color: #f9f9f9; /* Light background for contrast */
   border-radius: 8px; /* Rounded corners */
@@ -40,10 +51,10 @@
 /* Responsive styles */
 @media (max-width: 768px) {
   .about-title {
-    font-size: 1.5rem; /* Smaller title on mobile */
+      font-size: 1.5rem; /* Smaller title on mobile */
   }
 
   .about-text {
-    font-size: 1rem; /* Smaller text on mobile */
+      font-size: 1rem; /* Smaller text on mobile */
   }
 }
