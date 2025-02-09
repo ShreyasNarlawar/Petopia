@@ -1,0 +1,149 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\06e22a60-a14a-455f-afe5-82868a333d07.png",
+      "PackagePath": "staticwebassets\\uploads\\06e22a60-a14a-455f-afe5-82868a333d07.png"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\38b34842-d3a6-439e-b185-91ea7e0d547f.png",
+      "PackagePath": "staticwebassets\\uploads\\38b34842-d3a6-439e-b185-91ea7e0d547f.png"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\71f6763d-cbf8-4f82-a964-f6f7a3a11907.png",
+      "PackagePath": "staticwebassets\\uploads\\71f6763d-cbf8-4f82-a964-f6f7a3a11907.png"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\7dd41660-7767-490f-8552-3ed67929aa47.png",
+      "PackagePath": "staticwebassets\\uploads\\7dd41660-7767-490f-8552-3ed67929aa47.png"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\7f8bb868-d9a8-4f24-bf2d-b8a7c39cea16.png",
+      "PackagePath": "staticwebassets\\uploads\\7f8bb868-d9a8-4f24-bf2d-b8a7c39cea16.png"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\802ecbd1-e515-4632-bfaa-c3948c54a673.png",
+      "PackagePath": "staticwebassets\\uploads\\802ecbd1-e515-4632-bfaa-c3948c54a673.png"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\9fb13242-9c1a-4af4-9a5e-3876bf0c8eb0.png",
+      "PackagePath": "staticwebassets\\uploads\\9fb13242-9c1a-4af4-9a5e-3876bf0c8eb0.png"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\b50eb180-bdef-420d-b42c-66ca26f16eb6.png",
+      "PackagePath": "staticwebassets\\uploads\\b50eb180-bdef-420d-b42c-66ca26f16eb6.png"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\c21dfba8-3d1b-4002-841c-7efbf4430ca6.png",
+      "PackagePath": "staticwebassets\\uploads\\c21dfba8-3d1b-4002-841c-7efbf4430ca6.png"
+    },
+    {
+      "Id": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\fbcb65c8-a622-4d5d-bedc-fb62e4f63d64.png",
+      "PackagePath": "staticwebassets\\uploads\\fbcb65c8-a622-4d5d-bedc-fb62e4f63d64.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PetopiaWebApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PetopiaWebApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PetopiaWebApi.props",
+      "PackagePath": "build\\PetopiaWebApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PetopiaWebApi.props",
+      "PackagePath": "buildMultiTargeting\\PetopiaWebApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PetopiaWebApi.props",
+      "PackagePath": "buildTransitive\\PetopiaWebApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
