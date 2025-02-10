@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Import axios
 import './Login.css';
 
 const Login = () => {
@@ -35,45 +36,32 @@ const Login = () => {
     try {
       setIsLoading(true); // Start loading
 
-      const response = await fetch('https://localhost:44395/api/Users/login', {
-        method: 'POST',
+      const response = await axios.post('https://localhost:44395/api/Users/login', loginData, {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(loginData),
       });
 
-      const contentType = response.headers.get('Content-Type');
-      let data;
+      // Assuming the response data structure is the same as before
+      const data = response.data;
+      console.log('Login successful:', data);
 
-      if (!response.ok) {
-        if (contentType && contentType.includes('application/json')) {
-          data = await response.json();
-          setError(`Login failed: ${data.message || 'Unknown error'}`);
-        } else {
-          const errorMessage = await response.text();
-          setError(`Login failed: ${errorMessage}`);
-        }
-      } else {
-        if (contentType && contentType.includes('application/json')) {
-          data = await response.json();
-          console.log('Login successful:', data);
-
-          // Store token in localStorage (if returned)
-          if (data.token) {
-            localStorage.setItem('authToken', data.token);
-          }
-        } else {
-          // Handle plain text success response
-          const message = await response.text();
-          console.log('Login successful:', message);
-        }
-
-        setError(''); // Clear error
-        navigate('/'); // Redirect to home/dashboard
+      // Store token in localStorage (if returned)
+      if (data.token) {
+        localStorage.setItem('authToken', data.token);
       }
+
+      setError(''); // Clear error
+      navigate('/'); // Redirect to home/dashboard
     } catch (error) {
-      setError('An error occurred while logging in.');
+      if (axios.isAxiosError(error) && error.response) {
+        // Handle error response from the server
+        const errorMessage = error.response.data.message || 'Unknown error';
+        setError(`Login failed: ${errorMessage}`);
+      } else {
+        // Handle unexpected errors
+        setError('An error occurred while logging in.');
+      }
       console.error(error);
     } finally {
       setIsLoading(false); // Stop loading

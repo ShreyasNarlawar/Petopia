@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Donate.css";
 
 const Donate = () => {
@@ -11,6 +13,7 @@ const Donate = () => {
     vaccinated: false,
     spayed: false,
     weight: "",
+    category: "",
     breed: "",
     goodWithKids: false,
     goodWithOtherPets: false,
@@ -18,11 +21,34 @@ const Donate = () => {
     needs: "",
     personality: "",
     monthlyExpense: "",
-    registerId: "",
-    imagePath: "",
-    govRegistered: ""
+    userId: "", // Assuming a static user ID for now
+    isRegisteredWithGovt: "no" // Default value
   });
 
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+
+  // Pet categories and their breeds
+  const categories = {
+    1: { name: "Dogs", breeds: ["Labrador", "German Shepherd", "Golden Retriever", "Bulldog", "Beagle"] },
+    2: { name: "Cats", breeds: ["Persian", "Maine Coon", "Siamese", "Bengal", "Sphynx"] },
+    3: { name: "Birds", breeds: ["Parrot", "Canary", "Cockatiel", "Finch", "Macaw"] },
+    4: { name: "Fish", breeds: ["Goldfish", "Betta", "Angelfish", "Oscar"] },
+    5: { name: "Rabbits", breeds: ["Lionhead", "Flemish Giant", "Holland Lop", "Netherland Dwarf"] },
+    6: { name: "Reptiles", breeds: ["Iguana", "Python", "Chameleon", "Gecko"] },
+  };
+
+  // Handle category selection
+  const handleCategoryChange = (e) => {
+    setFormData({
+      ...formData,
+      category: Number(e.target.value), // Convert string to number
+      breed: "", // Reset breed when category changes
+    });
+  };
+
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -31,25 +57,97 @@ const Donate = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setLoading(true);
+    setMessage("");
+
+    // Basic validation
+    if (!formData.petName || !formData.category || !formData.breed) {
+      setMessage("Please fill out all required fields.");
+      setLoading(false);
+      return;
+    }
+
+    // Log request data before sending
+    console.log("Submitting data:", JSON.stringify(formData, null, 2));
+
+    try {
+      const petProfileData = {
+        Name: formData.petName,
+        Age: formData.age,
+        HouseTrained: formData.houseTrained,
+        Size: formData.size,
+        Gender: formData.gender,
+        Weight: formData.weight,
+        Vaccinated: formData.vaccinated,
+        Spayed: formData.spayed,
+        Health: formData.health,
+        Needs: formData.needs,
+        GoodWithKids: formData.goodWithKids,
+        GoodWithPets: formData.goodWithOtherPets,
+        Personality: formData.personality,
+        MonthlyExpenses: formData.monthlyExpense,
+        IsRegisteredWithGovt: formData.isRegisteredWithGovt,
+        CategoryId: formData.category, // Ensure you set the CategoryId
+        BreedId: categories[formData.category].breeds.indexOf(formData.breed) + 1, // Assuming breed IDs start from 1
+        UserId: formData.userId,
+      };
+      console.log(petProfileData);
+
+      // First, submit the pet profile data
+      const petProfileResponse = await axios.post(
+        "http://localhost:44395/api/PetProfile",
+        petProfileData
+      );
+
+      setMessage("Pet donation submitted successfully!");
+
+      // Redirect to upload images page with the created pet ID
+      const createdPetId = petProfileResponse.data.petId; // Assuming API returns petId
+      navigate(`/upload-images/${createdPetId}`);
+
+      // Reset form
+      setFormData({
+        petName: "",
+        age: "",
+        houseTrained: false,
+        size: "",
+        gender: "",
+        vaccinated: false,
+        spayed: false,
+        weight: "",
+        category: "",
+        breed: "",
+        goodWithKids: false,
+        goodWithOtherPets: false,
+        health: "",
+        needs: "",
+        personality: "",
+        monthlyExpense: "",
+        userId: "",
+        isRegisteredWithGovt: "no"
+      });
+    } catch (error) {
+      console.error("Submission error:", error);
+
+      if (error.response) {
+        console.error("API Error Response:", error.response.data);
+        setMessage(`Error: ${error.response.data.title || error.response.data}`);
+      } else {
+        setMessage("Error submitting pet donation. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="fullscreen-wrapper">
       <form onSubmit={handleSubmit} className="container mt-3 form-wrapper animate-fade-in">
         <h2>Pet Donation Form</h2>
-        <div className="mb-3">
-          <label>Pet Registration ID:</label>
-          <input
-            type="text"
-            className="form-control"
-            name="registerId"
-            value={formData.registerId}
-            onChange={handleChange}
-          />
-        </div>
+        {message && <div className="alert alert-info">{message}</div>}
+
         <div className="mb-3">
           <label>Pet Name:</label>
           <input
@@ -58,7 +156,42 @@ const Donate = () => {
             name="petName"
             value={formData.petName}
             onChange={handleChange}
+            required
           />
+        </div>
+        <div className="mb-3">
+          <label>Category:</label>
+          <select
+            className="form-control"
+            name="category"
+            value={formData.category}
+            onChange={handleCategoryChange}
+            required
+          >
+            <option value="">Select Category</option>
+            {Object.entries(categories).map(([id, category]) => (
+              <option key={id} value={id}>
+                {category.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="mb-3">
+          <label>Breed:</label>
+          <select
+            className="form-control"
+            name="breed"
+            value={formData.breed}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select Breed</option>
+            {formData.category && categories[formData.category].breeds.map((breed) => (
+              <option key={breed} value={breed}>
+                {breed}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="mb-3">
           <label>Age:</label>
@@ -71,34 +204,46 @@ const Donate = () => {
           />
         </div>
         <div className="mb-3">
+          <label>Enter UserID</label>
+          <input
+            type="number"
+            className="form-control"
+            name="userId"
+            value={formData.userId}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3">
           <label>Size:</label>
           <select
-            className="form-select"
+            className="form-control"
             name="size"
             value={formData.size}
             onChange={handleChange}
+            required
           >
-            <option value="">Select</option>
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
+            <option value="">Select Size</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
           </select>
         </div>
         <div className="mb-3">
           <label>Gender:</label>
-          <select
-            className="form-select"
+          <select className="form-control"
             name="gender"
             value={formData.gender}
             onChange={handleChange}
+            required
           >
-            <option value="">Select</option>
+            <option value="">Select Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div className="mb-3">
-          <label>Weight (kg):</label>
+          <label>Weight in gm:</label>
           <input
             type="number"
             className="form-control"
@@ -108,64 +253,59 @@ const Donate = () => {
           />
         </div>
         <div className="mb-3">
-          <label>Breed:</label>
-          <input
-            type="text"
-            className="form-control"
-            name="breed"
-            value={formData.breed}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3 form-check">
+          <label>House Trained:</label>
           <input
             type="checkbox"
-            className="form-check-input"
-            name="vaccinated"
-            checked={formData.vaccinated}
-            onChange={handleChange}
-          />
-          <label className="form-check-label">Vaccinated</label>
-        </div>
-        <div className="mb-3 form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            name="spayed"
-            checked={formData.spayed}
-            onChange={handleChange}
-          />
-          <label className="form-check-label">Spayed/Neutered</label>
-        </div>
-        <div className="mb-3 form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
             name="houseTrained"
             checked={formData.houseTrained}
             onChange={handleChange}
           />
-          <label className="form-check-label">House Trained</label>
         </div>
-        <div className="mb-3 form-check">
+        <div className="mb-3">
+          <label>Vaccinated:</label>
           <input
             type="checkbox"
-            className="form-check-input"
+            name="vaccinated"
+            checked={formData.vaccinated}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3">
+          <label>Spayed/Neutered:</label>
+          <input
+            type="checkbox"
+            name="spayed"
+            checked={formData.spayed}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3">
+          <label>Good with Kids:</label>
+          <input
+            type="checkbox"
             name="goodWithKids"
             checked={formData.goodWithKids}
             onChange={handleChange}
           />
-          <label className="form-check-label">Good With Kids</label>
         </div>
-        <div className="mb-3 form-check">
+        <div className="mb-3">
+          <label>Good with Other Pets:</label>
           <input
             type="checkbox"
-            className="form-check-input"
             name="goodWithOtherPets"
             checked={formData.goodWithOtherPets}
             onChange={handleChange}
           />
-          <label className="form-check-label">Good With Other Pets</label>
+        </div>
+        <div className="mb-3">
+          <label>Health:</label>
+          <input
+            type="text"
+            className="form-control"
+            name="health"
+            value={formData.health}
+            onChange={handleChange}
+          />
         </div>
         <div className="mb-3">
           <label>Needs:</label>
@@ -188,7 +328,7 @@ const Donate = () => {
           />
         </div>
         <div className="mb-3">
-          <label>Monthly Expense (in USD):</label>
+          <label>Monthly Expense:</label>
           <input
             type="number"
             className="form-control"
@@ -198,26 +338,21 @@ const Donate = () => {
           />
         </div>
         <div className="mb-3">
-          <label>Is the pet registered with the government?</label>
-          <div>
-            <input
-              type="radio"
-              name="govRegistered"
-              value="Yes"
-              checked={formData.govRegistered === "Yes"}
-              onChange={handleChange}
-            /> Yes
-            <input
-              type="radio"
-              name="govRegistered"
-              value="No"
-              checked={formData.govRegistered === "No"}
-              onChange={handleChange}
-            /> No
-          </div>
+          <label>Is Government ID Registered?</label>
+          <select
+            className="form-control"
+            name="isRegisteredWithGovt"
+            value={formData.isRegisteredWithGovt}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
         </div>
-        <button type="submit" className="btn btn-primary w-100">
-          Submit
+        <button type="submit" className="btn btn-primary" disabled={loading}>
+          {loading ? "Submitting..." : "Submit"}
         </button>
       </form>
     </div>

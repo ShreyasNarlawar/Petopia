@@ -22,7 +22,7 @@ namespace PetopiaWebApi
             builder.Services.AddDbContext<PetopiaDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
-            // Enable CORS (optional, modify if needed)
+            // Enable CORS 
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll", builder =>
@@ -30,6 +30,8 @@ namespace PetopiaWebApi
                     builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                 });
             });
+
+
 
             var app = builder.Build();
 
@@ -55,3 +57,4 @@ namespace PetopiaWebApi
         }
     }
 }
+

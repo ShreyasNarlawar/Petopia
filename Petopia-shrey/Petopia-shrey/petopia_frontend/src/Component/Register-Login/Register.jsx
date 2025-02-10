@@ -43,7 +43,7 @@ const Register = () => {
 
         // Ensure the correct fields are being passed with the correct keys
         const registrationData = {
-            Name: fname, // Ensure this key matches the expected key in the backend (could be 'Name')
+            Name: fname, // Ensure this key matches the expected key in the backend
             email,
             location,
             password,
@@ -67,7 +67,7 @@ const Register = () => {
                 // Log the server response to inspect errors
                 const errorResponse = await response.text(); // You can use response.json() if it's a JSON response
                 console.log('Error response from server:', errorResponse);
-                setError(`Registration failed: ${errorResponse}`);
+                setError(`Registration failed: ${errorResponse}`); // Fixed line
             } else {
                 // Registration was successful
                 setError('');

@@ -12,6 +12,8 @@ import FAQ from './Component/FAQ/FAQ'; // FAQ component
 import Terms from './Component/Terms/Terms'; // Terms of Service component
 import Footer from './Component/Footer/Footer'; // Footer component
 import NotFound from './Component/NotFound/NotFound'; // 404 Not Found component
+import UploadImage from './Component/UploadImage/uploadImage';
+
 // import Stats from './Component/Stats/Stats'; 
 import './App.css'; 
 
@@ -24,6 +26,8 @@ const App = () => {
             <Route path="/" exact element={<Home />} /> 
             <Route path="/adopt" exact element={<Adopt />} />
             <Route path="/donate" exact element={<Donate />} />
+            <Route path="/upload-images/:petId" exact element={<UploadImage />} />
+            
             <Route path="/aboutUs" exact element={<AboutUs />} /> 
             <Route path="/blog" exact element={<Blog />} />
             <Route path="/login" exact element={<Login />} />
