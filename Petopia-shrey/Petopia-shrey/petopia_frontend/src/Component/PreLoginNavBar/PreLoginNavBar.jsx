@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavBar.css'; // Custom CSS for styling
 import logo from '../../assets/petopia_logo.png'; // Replace with your logo path
 
-const NavBar = () => {
+const PreLoginNavBar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -36,16 +36,6 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link hover-effect" to="/adopt">
-                Adopt
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link hover-effect" to="/donate">
-                Donate
-              </Link>
-            </li>
-            <li className="nav-item">
               <Link className="nav-link hover-effect" to="/aboutUs">
                 About Us
               </Link>
@@ -62,20 +52,14 @@ const NavBar = () => {
             </li>
             <li className="nav-item dropdown">
               <Link
-                className={`nav-link dropdown-toggle hover-effect ${
-                  isDropdownOpen ? 'active' : ''
-                }`}
+                className={`nav-link dropdown-toggle hover-effect ${isDropdownOpen ? 'active' : ''}`}
                 to="#"
                 onClick={toggleDropdown}
                 aria-expanded={isDropdownOpen}
               >
                 More
               </Link>
-              <ul
-                className={`dropdown-menu ${
-                  isDropdownOpen ? 'show dropdown-animate' : ''
-                }`}
-              >
+              <ul className={`dropdown-menu ${isDropdownOpen ? 'show dropdown-animate' : ''}`}>
                 <li>
                   <Link className="dropdown-item" to="/terms">
                     Terms of Service
@@ -102,4 +86,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default PreLoginNavBar;

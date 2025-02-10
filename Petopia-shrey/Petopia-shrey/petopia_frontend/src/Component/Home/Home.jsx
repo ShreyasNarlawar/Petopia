@@ -84,19 +84,19 @@ function Cards() {
               src={Bunny}
               text="Adorable bunnies" 
               label="Bunny" 
-              path="/adoption" 
+            
             />
             <CardItem 
               src={Kitten} 
               text="Adorable kittens" 
               label="Kittens" 
-              path="/adoption" 
+               
             />
             <CardItem 
               src={Dog} 
               text="Adorable pups" 
               label="Puppies" 
-              path="/adoption" 
+              
             />
           </ul>
           <ul className="cards__items">
@@ -104,25 +104,25 @@ function Cards() {
               src={Fish}
               text="Adorable fishes" 
               label="Fish" 
-              path="/adoption" 
+              
             />
             <CardItem 
               src={Duck}
               text="Adorable birds" 
               label="Birds" 
-              path="/adoption" 
+              
             />
             {/* <CardItem 
               src={Cow}
               text="Adorable cows" 
               label="Cow" 
-              path="/adoption" 
+             
             /> */}
             <CardItem 
               src={Cat}
               text="Adorable cats" 
               label="Cattle" 
-              path="/adoption" 
+            
             />
           </ul>
         </div>

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./UploadImage.css";
 
 const UploadImages = () => {
   const { petId } = useParams();
+  const navigate = useNavigate();
   const [images, setImages] = useState([]);
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -25,12 +26,17 @@ const UploadImages = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:44395/api/PetImage/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await axios.post(
+        "https://localhost:44395/api/PetImage/upload",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       setMessage(response.data);
+      navigate("/adopt"); // Redirect to adopt page after success
     } catch (error) {
       console.error("Error uploading images:", error);
       if (error.response) {

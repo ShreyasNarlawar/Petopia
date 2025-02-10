@@ -79,26 +79,47 @@ namespace PetopiaWebApi.Controllers
             return Ok("Images uploaded successfully.");
         }
 
+        //[HttpGet("get/{id}")]
+        //public async Task<IActionResult> GetImagesByPetId(int id)
+        //{
+        //    // Retrieve images associated with the given Pet ID
+        //    var images = await _context.PetImages
+        //        .Where(p => p.PetId == id)
+        //        .Select(p => new
+        //        {
+        //            p.ImageId,
+        //            FileName = Path.GetFileName(p.ImagePath) // Get only the file name
+        //        })
+        //        .ToListAsync();
+
+        //    if (images == null || !images.Any())
+        //    {
+        //        return NotFound("No images found for the given Pet ID.");
+        //    }
+
+        //    return Ok(images);
+        //}
+
         [HttpGet("get/{id}")]
         public async Task<IActionResult> GetImagesByPetId(int id)
         {
-            // Retrieve images associated with the given Pet ID
             var images = await _context.PetImages
                 .Where(p => p.PetId == id)
                 .Select(p => new
                 {
                     p.ImageId,
-                    FileName = Path.GetFileName(p.ImagePath) // Get only the file name
+                    ImageUrl = $"{Request.Scheme}://{Request.Host}{Request.PathBase}/uploads/{Path.GetFileName(p.ImagePath)}"
                 })
                 .ToListAsync();
 
-            if (images == null || !images.Any())
+            if (!images.Any())
             {
-                return NotFound("No images found for the given Pet ID.");
+                return NotFound(new { Message = "No images found for the given Pet ID." });
             }
 
             return Ok(images);
         }
+
 
         [HttpGet("image/{fileName}")]
         public IActionResult GetImage(string fileName)

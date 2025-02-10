@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Import axios
 import './Login.css';
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -42,7 +42,6 @@ const Login = () => {
         },
       });
 
-      // Assuming the response data structure is the same as before
       const data = response.data;
       console.log('Login successful:', data);
 
@@ -52,14 +51,13 @@ const Login = () => {
       }
 
       setError(''); // Clear error
+      onLogin(); // Call onLogin to update the authentication state
       navigate('/'); // Redirect to home/dashboard
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {
-        // Handle error response from the server
         const errorMessage = error.response.data.message || 'Unknown error';
         setError(`Login failed: ${errorMessage}`);
       } else {
-        // Handle unexpected errors
         setError('An error occurred while logging in.');
       }
       console.error(error);
@@ -70,7 +68,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2 className="login-title">Welcome Back!</h2>
+      <h2 className="login-title">Pets Leave PawPrints on our Hearts.❤️🐾</h2>
       {error && <p className="error-message" aria-live="polite">{error}</p>}
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="form-group">

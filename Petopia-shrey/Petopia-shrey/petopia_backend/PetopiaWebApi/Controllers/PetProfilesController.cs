@@ -25,6 +25,7 @@ namespace PetopiaWebApi.Controllers
         }
 
         [HttpGet("{id}")]
+
         public async Task<ActionResult<PetProfile>> GetPetProfileById(int id)
         {
             var pet = await context.PetProfiles.FindAsync(id);
@@ -128,6 +129,8 @@ namespace PetopiaWebApi.Controllers
             await context.SaveChangesAsync();
             return Ok();
         }
+
+ 
 
         public class PetDto
         {
