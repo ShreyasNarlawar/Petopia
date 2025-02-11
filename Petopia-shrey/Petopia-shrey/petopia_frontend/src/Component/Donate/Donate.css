@@ -1,9 +1,11 @@
 /* General Page Styling */
+/* General Page Styling */
 body, html {
   height: 100%;
-  margin-top: 0;
+  margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: #f4f7fc;
+  padding-top: 80px; /* Adjust this based on navbar height */
 }
 
 /* Fullscreen Wrapper */
@@ -12,8 +14,8 @@ body, html {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin-top: 950px;
-  
+  margin-top: 800px; /* Remove excessive margin */
+  padding-top: 80px; /* Adjust this based on navbar height */
 }
 
 /* Form Wrapper */
@@ -24,9 +26,10 @@ body, html {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   max-width: 1000px;
   width: 100%;
-  margin-top:  45px;
+  margin-top: 20px; /* Adjust based on layout */
   animation: fadeIn 0.8s ease;
 }
+
 
 h2 {
   text-align: center;

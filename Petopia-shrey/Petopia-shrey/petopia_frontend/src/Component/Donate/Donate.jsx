@@ -21,7 +21,7 @@ const Donate = () => {
     needs: "",
     personality: "",
     monthlyExpense: "",
-    userId: "", // Assuming a static user ID for now
+    userId: "", 
     isRegisteredWithGovt: "no" // Default value
   });
 
@@ -31,12 +31,12 @@ const Donate = () => {
 
   // Pet categories and their breeds
   const categories = {
-    1: { name: "Dogs", breeds: ["Labrador", "German Shepherd", "Golden Retriever", "Bulldog", "Beagle"] },
-    2: { name: "Cats", breeds: ["Persian", "Maine Coon", "Siamese", "Bengal", "Sphynx"] },
-    3: { name: "Birds", breeds: ["Parrot", "Canary", "Cockatiel", "Finch", "Macaw"] },
-    4: { name: "Fish", breeds: ["Goldfish", "Betta", "Angelfish", "Oscar"] },
-    5: { name: "Rabbits", breeds: ["Lionhead", "Flemish Giant", "Holland Lop", "Netherland Dwarf"] },
-    6: { name: "Reptiles", breeds: ["Iguana", "Python", "Chameleon", "Gecko"] },
+    1: { name: "Dogs", breeds: ["Golden Retriever", "German Shepherd", "Bulldog", "Beagle"] },
+    2: { name: "Cats", breeds: ["Persian", "Siamese", "Cancoon", "Bengal"] },
+    3: { name: "Birds", breeds: ["Parakeet", "Cockateil", "Macaw", "Finch"] },
+    5: { name: "Fish", breeds: ["Goldfish", "Guppy", "Angelfish"] },
+    4: { name: "Rabbits", breeds: ["Netherland Dwarf", "Holland Lopt"] },
+    6: { name: "Reptiles", breeds: ["Ball Python", "CornSnake"] },
   };
 
   // Handle category selection

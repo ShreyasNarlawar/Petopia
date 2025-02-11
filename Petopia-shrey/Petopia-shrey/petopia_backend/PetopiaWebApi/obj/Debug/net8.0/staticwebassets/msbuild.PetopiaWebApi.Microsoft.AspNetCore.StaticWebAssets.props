@@ -414,6 +414,42 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\0ee5029c-3f79-4905-a5da-65bcd1975382.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\149b28d4-d5b4-4636-911d-f7aa72487f38.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>PetopiaWebApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/PetopiaWebApi</BasePath>
+      <RelativePath>uploads/149b28d4-d5b4-4636-911d-f7aa72487f38.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>3bmn0xh41m</Fingerprint>
+      <Integrity>Ufud10pIwWPd5M2BnjXiwQb+YgM14rbYXBih1ZhAJlg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\149b28d4-d5b4-4636-911d-f7aa72487f38.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\1c359f97-3749-4b5e-aad8-1af881e6353a.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>PetopiaWebApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/PetopiaWebApi</BasePath>
+      <RelativePath>uploads/1c359f97-3749-4b5e-aad8-1af881e6353a.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>faj95lomw7</Fingerprint>
+      <Integrity>GZ2qRNzi3sfEpe93voBofCL7VLc3rVKF1IQUh9R10mA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\1c359f97-3749-4b5e-aad8-1af881e6353a.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\2be55557-d289-414d-be03-f890e9a8ce46.png'))">
       <SourceType>Package</SourceType>
       <SourceId>PetopiaWebApi</SourceId>

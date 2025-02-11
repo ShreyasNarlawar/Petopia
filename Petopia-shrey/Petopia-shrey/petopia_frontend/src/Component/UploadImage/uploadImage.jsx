@@ -55,7 +55,7 @@ const UploadImages = () => {
       {message && <div className="alert alert-info">{message}</div>}
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label>Select Images (up to 4):</label>
+          <label>Select Image:</label>
           <input
             type="file"
             multiple

@@ -12,8 +12,8 @@ const Register = () => {
     const [location, setLocation] = useState('');
     const [role, setRole] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
-    const [isLoading, setIsLoading] = useState(false); // Track loading state
-    const navigate = useNavigate(); // Initialize useNavigate
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     const validatePassword = (password) => {
         const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
@@ -23,58 +23,47 @@ const Register = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
 
-        // Validate password strength
         if (!validatePassword(password)) {
             setError('Password must be at least 8 characters long, contain at least one uppercase letter, one number, and one special character.');
             return;
         }
 
-        // Check if passwords match
         if (password !== confirmPassword) {
             setError('Passwords do not match.');
             return;
         }
 
-        // Check for missing fields
         if (!fname || !email || !location || !password || !phonenumber || !role) {
             setError('Please fill in all fields.');
             return;
         }
 
-        // Ensure the correct fields are being passed with the correct keys
         const registrationData = {
-            Name: fname, // Ensure this key matches the expected key in the backend
+            Name: fname,
             email,
             location,
             password,
-            phoneNo: phonenumber,  // Ensure this matches the expected key in the backend
-            userRole: role,         // Ensure this matches the expected key in the backend
+            phoneNo: phonenumber,
+            userRole: role,
         };
 
         try {
-            setIsLoading(true); // Start loading
-
-            // Make a POST request to the backend API
+            setIsLoading(true);
             const response = await fetch('https://localhost:44395/api/users/register', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(registrationData),
             });
 
             if (!response.ok) {
-                // Log the server response to inspect errors
-                const errorResponse = await response.text(); // You can use response.json() if it's a JSON response
+                const errorResponse = await response.text();
                 console.log('Error response from server:', errorResponse);
-                setError(`Registration failed: ${errorResponse}`); // Fixed line
+                setError(`Registration failed: ${errorResponse}`);
             } else {
-                // Registration was successful
                 setError('');
                 setSuccessMessage('Registration successful! Redirecting to login...');
                 console.log('Registration successful:', await response.json());
 
-                // Redirect after delay
                 setTimeout(() => {
                     navigate('/login');
                 }, 2000);
@@ -83,7 +72,7 @@ const Register = () => {
             setError('An error occurred during registration. Please try again.');
             console.error('Registration error:', error);
         } finally {
-            setIsLoading(false); // Stop loading
+            setIsLoading(false);
         }
     };
 
@@ -128,12 +117,7 @@ const Register = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="role">What do you want to do?</label>
-                    <select
-                        id="role"
-                        value={role}
-                        onChange={(e) => setRole(e.target.value)}
-                        required
-                    >
+                    <select id="role" value={role} onChange={(e) => setRole(e.target.value)} required>
                         <option value="" disabled>Select your role</option>
                         <option value="both">Both</option>
                         <option value="donor">Donor</option>

@@ -21,6 +21,8 @@ wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\uploads\06e22a60-a14a-455f-afe5-82868a333d07.png
 wwwroot\uploads\0ee5029c-3f79-4905-a5da-65bcd1975382.png
+wwwroot\uploads\149b28d4-d5b4-4636-911d-f7aa72487f38.jpg
+wwwroot\uploads\1c359f97-3749-4b5e-aad8-1af881e6353a.jpg
 wwwroot\uploads\2be55557-d289-414d-be03-f890e9a8ce46.png
 wwwroot\uploads\36148ed3-f74f-43fc-989b-5d1418bd48b5.png
 wwwroot\uploads\38b34842-d3a6-439e-b185-91ea7e0d547f.png

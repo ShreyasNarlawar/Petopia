@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "grOBupqEok+JHd8S6UUd8ZFtcQfo+guca17FMoj0x7s=",
+  "Hash": "US1plZ6pTarSueeWKP2mIP0H+9AudF2JYiraTOyCfxY=",
   "Source": "PetopiaWebApi",
   "BasePath": "_content/PetopiaWebApi",
   "Mode": "Default",
@@ -1758,6 +1758,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\0ee5029c-3f79-4905-a5da-65bcd1975382.png"
+    },
+    {
+      "Identity": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\149b28d4-d5b4-4636-911d-f7aa72487f38.jpg",
+      "SourceId": "PetopiaWebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\",
+      "BasePath": "_content/PetopiaWebApi",
+      "RelativePath": "uploads/149b28d4-d5b4-4636-911d-f7aa72487f38#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3bmn0xh41m",
+      "Integrity": "Ufud10pIwWPd5M2BnjXiwQb+YgM14rbYXBih1ZhAJlg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\149b28d4-d5b4-4636-911d-f7aa72487f38.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\1c359f97-3749-4b5e-aad8-1af881e6353a.jpg",
+      "SourceId": "PetopiaWebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\",
+      "BasePath": "_content/PetopiaWebApi",
+      "RelativePath": "uploads/1c359f97-3749-4b5e-aad8-1af881e6353a#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "faj95lomw7",
+      "Integrity": "GZ2qRNzi3sfEpe93voBofCL7VLc3rVKF1IQUh9R10mA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\1c359f97-3749-4b5e-aad8-1af881e6353a.jpg"
     },
     {
       "Identity": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\2be55557-d289-414d-be03-f890e9a8ce46.png",
@@ -6347,6 +6389,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-oCjid2Oo6A92mVojT9F/LFdEuuuUBdYTaditSc7W8AE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/149b28d4-d5b4-4636-911d-f7aa72487f38.3bmn0xh41m.jpg",
+      "AssetFile": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\149b28d4-d5b4-4636-911d-f7aa72487f38.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22121"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ufud10pIwWPd5M2BnjXiwQb+YgM14rbYXBih1ZhAJlg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Feb 2025 20:02:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3bmn0xh41m"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/149b28d4-d5b4-4636-911d-f7aa72487f38.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ufud10pIwWPd5M2BnjXiwQb+YgM14rbYXBih1ZhAJlg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/149b28d4-d5b4-4636-911d-f7aa72487f38.jpg",
+      "AssetFile": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\149b28d4-d5b4-4636-911d-f7aa72487f38.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22121"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ufud10pIwWPd5M2BnjXiwQb+YgM14rbYXBih1ZhAJlg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Feb 2025 20:02:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ufud10pIwWPd5M2BnjXiwQb+YgM14rbYXBih1ZhAJlg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/1c359f97-3749-4b5e-aad8-1af881e6353a.faj95lomw7.jpg",
+      "AssetFile": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\1c359f97-3749-4b5e-aad8-1af881e6353a.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7775"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GZ2qRNzi3sfEpe93voBofCL7VLc3rVKF1IQUh9R10mA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Feb 2025 20:26:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "faj95lomw7"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/1c359f97-3749-4b5e-aad8-1af881e6353a.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GZ2qRNzi3sfEpe93voBofCL7VLc3rVKF1IQUh9R10mA="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/1c359f97-3749-4b5e-aad8-1af881e6353a.jpg",
+      "AssetFile": "C:\\Users\\rutun\\OneDrive\\Desktop\\ProjectDocs\\Petopia-shrey\\Petopia-shrey\\petopia_backend\\PetopiaWebApi\\wwwroot\\uploads\\1c359f97-3749-4b5e-aad8-1af881e6353a.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7775"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GZ2qRNzi3sfEpe93voBofCL7VLc3rVKF1IQUh9R10mA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Feb 2025 20:26:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GZ2qRNzi3sfEpe93voBofCL7VLc3rVKF1IQUh9R10mA="
         }
       ]
     },

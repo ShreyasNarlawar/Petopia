@@ -112,7 +112,7 @@ namespace PetopiaWebApi.Controllers
             {
                 Name = userDto.Name,
                 Email = userDto.Email,
-                Password = userDto.Password, // Store plain text password
+                Password = userDto.Password, 
                 PhoneNo = userDto.PhoneNo,
                 Location = userDto.Location,
                 UserRole = userDto.UserRole
@@ -129,14 +129,34 @@ namespace PetopiaWebApi.Controllers
         public async Task<ActionResult<string>> Login(UserLoginDto userLoginDto)
         {
             var user = await context.Users.FirstOrDefaultAsync(u => u.Email == userLoginDto.Email);
-            if (user == null || user.Password != userLoginDto.Password) // Compare plain text password
+            if (user == null || user.Password != userLoginDto.Password) 
             {
                 return Unauthorized("Invalid credentials.");
             }
 
-            // Generate a token (you can implement JWT here)
+            
             return Ok("Login successful.");
         }
+
+        //[HttpPost("login")]
+        //public async Task<ActionResult<object>> Login(UserLoginDto userLoginDto)
+        //{
+        //    var user = await context.Users.FirstOrDefaultAsync(u => u.Email == userLoginDto.Email);
+        //    if (user == null || user.Password != userLoginDto.Password) // Compare plain text password
+        //    {
+        //        return Unauthorized(new { message = "Invalid credentials." });
+        //    }
+
+        //    // Generate a token (you can implement JWT here)
+        //    var response = new
+        //    {
+        //        UserId = user.UserId,
+        //        Message = "Login successful."
+        //    };
+
+        //    return Ok(response);
+        //}
+
 
 
         //private string HashPassword(string password)

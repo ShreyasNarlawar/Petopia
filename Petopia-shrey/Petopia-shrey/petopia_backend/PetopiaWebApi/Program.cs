@@ -46,7 +46,7 @@ namespace PetopiaWebApi
             app.UseStaticFiles();
             app.UseRouting();
 
-            // Apply CORS policy (optional, modify if needed)
+            // Apply CORS policy 
             app.UseCors("AllowAll");
 
             app.UseAuthorization();

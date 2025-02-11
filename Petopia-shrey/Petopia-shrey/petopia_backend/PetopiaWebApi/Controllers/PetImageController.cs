@@ -30,10 +30,10 @@ namespace PetopiaWebApi.Controllers
                 return NotFound($"No pet found with ID {dto.PetId}.");
             }
 
-            // Check if there are more than 4 images
-            if (dto.Images.Length > 4)
+            // Check if there are more than 1 image
+            if (dto.Images.Length > 1)
             {
-                return BadRequest("You can upload up to 4 images at a time.");
+                return BadRequest("You can upload only one image.");
             }
 
             foreach (var image in dto.Images)

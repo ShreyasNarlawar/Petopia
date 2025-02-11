@@ -3,7 +3,7 @@ import axios from "axios";
 import DisplayImage from "../../assets/cover.jpg";
 import "../Adopt/Adopt.css";
 
-const API_BASE_URL = "https://localhost:44395/api"; // Base API URL
+const API_BASE_URL = "https://localhost:44395/api"; 
 
 const Adopt = () => {
   const [pets, setPets] = useState([]);
@@ -17,11 +17,27 @@ const Adopt = () => {
         const response = await axios.get(`${API_BASE_URL}/PetProfile`);
         const petsData = response.data;
 
+        // Fetch images and user details in one go
         const petsWithDetails = await Promise.all(
           petsData.map(async (pet) => {
-            const images = await fetchPetImages(pet.petId);
-            const user = await fetchUserDetails(pet.userId);
-            return { ...pet, images, user };
+            try {
+              const [imagesResponse, userResponse] = await Promise.all([
+                axios.get(`${API_BASE_URL}/PetImage/get/${pet.petId}`),
+                axios.get(`${API_BASE_URL}/Users/${pet.userId}`)
+              ]);
+
+              return { 
+                ...pet, 
+                images: imagesResponse.data.map(img => img.imageUrl), 
+                user: userResponse.data 
+              };
+            } catch {
+              return { 
+                ...pet, 
+                images: [], 
+                user: { name: "Unknown", email: "N/A", phoneNo: "N/A", location: "N/A" } 
+              };
+            }
           })
         );
 
@@ -36,32 +52,10 @@ const Adopt = () => {
     fetchPets();
   }, []);
 
-  const fetchPetImages = async (id) => {
-    try {
-      const response = await axios.get(`${API_BASE_URL}/PetImage/get/${id}`);
-      return response.data.map((img) => img.imageUrl);
-    } catch (err) {
-      return [];
-    }
-  };
-
-  const fetchUserDetails = async (id) => {
-    try {
-      const response = await axios.get(`${API_BASE_URL}/Users/${id}`);
-      return response.data;
-    } catch (err) {
-      return { name: "Unknown", email: "N/A", phoneNo: "N/A", location: "N/A" };
-    }
-  };
-
   const renderPetCards = (petsList) =>
     petsList.map((pet) => (
       <div className="pet-card" key={pet.petId} onClick={() => setSelectedPet(pet)}>
-        {pet.images?.length > 0 ? (
-          <img src={pet.images[0]} alt={pet.name} className="pet-image" />
-        ) : (
-          <img src={DisplayImage} alt="Default Pet" className="pet-image" />
-        )}
+        <img src={pet.images?.length > 0 ? pet.images[0] : DisplayImage} alt={pet.name} className="pet-image" />
         <h3>{pet.name}</h3>
         <p>Breed: {pet.breed}</p>
         <p>Age: {pet.age} years</p>
