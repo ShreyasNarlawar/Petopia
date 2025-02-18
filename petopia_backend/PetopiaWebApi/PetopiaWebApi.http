@@ -1,6 +1,0 @@
-@PetopiaWebApi_HostAddress = http://localhost:5027
-
-GET {{PetopiaWebApi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
